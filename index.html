@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FutureMedAI</title>
   <style>
-    /* Global Styles */
-    :root {
-      --primary-color: #2563eb;
-      --bg-color: #0f172a;
-      --card-bg: #1e293b;
-      --text-color: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -21,132 +12,182 @@
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
+      background-color: #0b1120;
+      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    /* Navigation */
+    /* Top Navigation Bar */
+    header {
+      padding: 2.5rem 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
+      gap: 2rem;
     }
 
-    nav .logo {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: var(--text-color);
+    nav a {
+      color: #94a3b8;
       text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffffff;
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 5rem 1rem 3rem;
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 720px;
+      margin-bottom: 5rem;
     }
 
     .hero h1 {
-      font-size: 2.75rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.025em;
+      font-size: 3.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      color: #ffffff;
     }
 
     .hero p {
-      font-size: 1.125rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
+      font-size: 1.15rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 2.25rem;
     }
 
-    .btn {
+    .btn-primary {
       display: inline-block;
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.75rem 1.5rem;
+      background-color: #2563eb;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
       border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.2s ease;
+      transition: background-color 0.2s, transform 0.15s;
     }
 
-    .btn:hover {
+    .btn-primary:hover {
       background-color: #1d4ed8;
+      transform: translateY(-1px);
     }
 
-    /* Features Grid */
-    .features {
+    /* Article Cards Grid */
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
-      max-width: 1100px;
-      margin: 3rem auto;
-      padding: 0 1rem;
+      width: 100%;
     }
 
     .card {
-      background-color: var(--card-bg);
-      padding: 1.5rem;
-      border-radius: 12px;
+      background-color: #1e293b;
       border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 2rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
-    .card h3 {
-      margin-bottom: 0.5rem;
+    .card:hover {
+      border-color: #475569;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
     }
 
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
     }
 
     /* Footer */
     footer {
+      padding: 3rem;
       text-align: center;
-      padding: 3rem 1rem;
-      color: var(--text-muted);
+      color: #64748b;
       font-size: 0.875rem;
-      border-top: 1px solid #334155;
-      margin-top: 4rem;
+    }
+
+    @media (max-width: 850px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      header {
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#" class="logo">FutureMedAI</a>
-  </nav>
-
-  <!-- Main Hero -->
-  <header class="hero">
-    <h1>Welcome to FutureMedAI</h1>
-    <p>Exploring the future of healthcare technology, machine learning, and medical innovation.</p>
-    <a href="#about" class="btn">Get Started</a>
+  <header>
+    <a href="index.html" class="brand-title">FutureMedAI</a>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+    </nav>
   </header>
 
-  <!-- Content Section -->
-  <main class="features" id="about">
-    <div class="card">
-      <h3>Overview</h3>
-      <p>Briefly introduce your project, mission, or research goals here.</p>
-    </div>
-    <div class="card">
-      <h3>Technology</h3>
-      <p>List the models, tools, or frameworks you are using behind the scenes.</p>
-    </div>
-    <div class="card">
-      <h3>Impact</h3>
-      <p>Highlight the real-world problems and applications your project addresses.</p>
-    </div>
+  <main>
+    <section class="hero">
+      <h1>Welcome to FutureMedAI</h1>
+      <p>Exploring the future of healthcare technology, machine learning, and medical innovation.</p>
+      <a href="article1.html" class="btn-primary">Get Started</a>
+    </section>
+
+    <section class="grid">
+      <a href="article1.html" class="card">
+        <h2>Title 1</h2>
+      </a>
+      <a href="about.html" class="card">
+        <h2>About Me</h2>
+      </a>
+      <a href="article1.html" class="card">
+        <h2>Research & Insights</h2>
+      </a>
+    </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2026 FutureMedAI. All rights reserved.</p>
   </footer>
