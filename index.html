@@ -96,9 +96,10 @@
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
       width: 100%;
+      max-width: 720px;
     }
 
     .card {
@@ -111,6 +112,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      text-align: center;
       transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     }
 
@@ -133,7 +136,7 @@
       font-size: 0.875rem;
     }
 
-    @media (max-width: 850px) {
+    @media (max-width: 650px) {
       .grid {
         grid-template-columns: 1fr;
       }
@@ -159,18 +162,15 @@
   <main>
     <section class="hero">
       <h1>FutureMedAI</h1>
-      <a href="article1.html" class="btn-primary">Get Started</a>
+      <a href="article1.html" class="btn-primary">All Blogs</a>
     </section>
 
     <section class="grid">
       <a href="article1.html" class="card">
-        <h2>Title 1</h2>
+        <h2>Most Recent Blog</h2>
       </a>
       <a href="about.html" class="card">
         <h2>About</h2>
-      </a>
-      <a href="article1.html" class="card">
-        <h2>Title 2</h2>
       </a>
     </section>
   </main>
