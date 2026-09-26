@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - FutureMedAI</title>
+  <title>Title 1 - FutureMedAI</title>
   <style>
     * {
       box-sizing: border-box;
@@ -20,6 +20,7 @@
       flex-direction: column;
     }
 
+    /* Header Navigation */
     header {
       padding: 2.5rem 3rem;
       display: flex;
@@ -48,40 +49,49 @@
       transition: color 0.2s;
     }
 
-    nav a:hover, nav a.active {
+    nav a:hover {
       color: #ffffff;
     }
 
+    /* Main Full-Page Article Area (No Container Box) */
     main {
       flex: 1;
-      max-width: 800px;
+      max-width: 760px;
       width: 100%;
       margin: 0 auto;
       padding: 3rem 2rem 6rem;
     }
 
-    .about-container {
-      background-color: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 3.5rem 3rem;
-    }
-
     h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 800;
-      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
       color: #ffffff;
+      line-height: 1.2;
     }
 
     .content {
       color: #cbd5e1;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       line-height: 1.8;
     }
 
     .content p {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 3rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .back-btn:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -92,8 +102,8 @@
     }
 
     @media (max-width: 600px) {
-      .about-container {
-        padding: 2rem 1.5rem;
+      h1 {
+        font-size: 2.25rem;
       }
       header {
         padding: 1.5rem;
@@ -107,17 +117,18 @@
     <a href="index.html" class="brand-title">FutureMedAI</a>
     <nav>
       <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
     </nav>
   </header>
 
   <main>
-    <div class="about-container">
-      <h1>About</h1>
+    <article>
+      <h1>Title 1</h1>
       <div class="content">
-        <p>Welcome to FutureMedAI. This platform is dedicated to exploring how artificial intelligence, machine learning, and advanced computation intersect with modern medicine.</p>
+        <p>Your full article content will go here. You can write your analysis, research, and thoughts on AI applications in modern healthcare directly on this clean background.</p>
       </div>
-    </div>
+      <a href="index.html" class="back-btn">&larr; Back to Home</a>
+    </article>
   </main>
 
   <footer>
